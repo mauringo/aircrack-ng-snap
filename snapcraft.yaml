@@ -1,0 +1,199 @@
+name: aircrack-ng
+version: '1.1'
+base: core18
+architectures:
+  - build-on: amd64
+    run-on: amd64
+
+  - build-on: arm64
+    run-on: arm64
+
+grade: devel
+summary: snap porting of the famous testing tool
+description: |
+      snap port of the famous cracking tool
+   
+
+confinement: strict
+
+apps:
+    
+     ethtool:
+        command: sbin/ethtool
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+
+     
+     iw:
+        command: sbin/iw
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+ 
+        
+     iwconfig:
+        command: sbin/iwconfig
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+        
+
+     iwevent:
+        command: sbin/iwevent
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+        
+        
+     iwgetid:
+        command: sbin/iwgetid
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+        
+        
+                
+     iwlist:
+        command: sbin/iwlist
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+  
+     iwpriv:
+        command: sbin/iwpriv
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+              
+
+     iwspy:
+        command: sbin/iwspy
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+           
+           
+     airbase-ng:
+        command: usr/sbin/airbase-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+          
+     aireplay-ng:
+        command: usr/sbin/aireplay-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+                 
+     airmon-ng:
+        command: usr/sbin/airmon-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+                 
+                 
+     airodump-ng:
+        command: usr/sbin/airodump-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+                 
+                      
+     airserv-ng:
+        command: usr/sbin/airserv-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+                 
+                      
+     airtun-ng:
+        command: usr/sbin/airtun-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+        
+                      
+     besside-ng:
+        command: usr/sbin/besside-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+        
+                      
+     rfkill:
+        command: usr/sbin/rfkill
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+        
+        
+                      
+     tkiptun-ng:
+        command: usr/sbin/tkiptun-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+
+        
+                      
+     wesside-ng:
+        command: usr/sbin/wesside-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+            
+        
+                      
+     aircrack-ng:
+        command: usr/bin/aircrack-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+           
+        
+                      
+     airdecap-ng:
+        command: usr/bin/airdecap-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+           
+                      
+     airdecloak-ng:
+        command: usr/bin/airdecloak-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+           
+ 
+                      
+     airolib-ng:
+        command: usr/bin/airolib-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                                         
+            
+          
+                      
+     besside-ng-crawler:
+        command: usr/bin/besside-ng-crawler
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control] 
+        
+        
+                      
+     buddy-ng:
+        command: usr/bin/buddy-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                             
+
+                      
+     packetforge-ng:
+        command: usr/bin/packetforge-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]  
+ 
+     makeivs-ng:
+        command: usr/bin/makeivs-ng
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]        
+                      
+     ivstools:
+        command: usr/bin/ivstools
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]  
+        
+
+                      
+     lsusb:
+        command: usr/bin/lsusb
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]                  
+                      
+     kstats:
+        command: usr/bin/kstats
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]  
+        
+     wpaclean:
+        command: usr/bin/wpaclean
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]  
+  
+     usbhid-dump:
+        command: usr/bin/usbhid-dump
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]  
+              
+                     
+        
+     info:
+        command: bin/info.sh 
+        plugs: [network, network-bind, mount-observe, network-observe, system-observe, bluetooth-control]
+     
+
+        
+
+parts:
+
+    
+    aircrack:
+        plugin: nil
+        stage-packages:
+            - aircrack-ng
+            - wireless-tools
+
+  
+    shscripts:  
+        source: ./shscripts/
+        plugin: dump
+        organize:
+          '*': bin/
