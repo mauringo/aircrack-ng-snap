@@ -1,4 +1,4 @@
-name: aircrack-ng
+name: aircrack-ng-snap
 version: '1.1'
 base: core18
 architectures:
@@ -9,9 +9,9 @@ architectures:
     run-on: arm64
 
 grade: devel
-summary: snap porting of the famous testing tool
+summary: unofficial snap porting of the famous testing tool
 description: |
-      snap port of the famous cracking tool
+      unofficial snap port of the famous cracking tool
    
 
 confinement: strict
