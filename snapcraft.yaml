@@ -1,5 +1,5 @@
 name: aircrack-ng-snap
-version: '1.1'
+version: '1.1.1'
 base: core18
 architectures:
   - build-on: amd64
@@ -188,6 +188,8 @@ parts:
     aircrack:
         plugin: nil
         stage-packages:
+            - pciutils
+            - usbutils
             - aircrack-ng
             - wireless-tools
 
